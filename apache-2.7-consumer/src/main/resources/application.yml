@@ -1,0 +1,8 @@
+server:
+  port: 8081
+dubbo:
+  application:
+    id: apache-2.7-consumer
+    name: apache-2.7-consumer
+  registry:
+    address: zookeeper://127.0.0.1:2181 # 注册中心

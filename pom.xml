@@ -19,9 +19,12 @@
 
     <!-- 模块信息 -->
     <modules>
-        <module>dubbo-base</module>
-        <module>dubbo-consumer</module>
-        <module>dubbo-provider</module>
+        <module>alibaba-2.6-base</module>
+        <module>alibaba-2.6-consumer</module>
+        <module>alibaba-2.6-provider</module>
+        <module>apache-2.7-base</module>
+        <module>apache-2.7-consumer</module>
+        <module>apache-2.7-provider</module>
     </modules>
 
     <!-- 打包方式 -->
@@ -31,10 +34,13 @@
         <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
         <spring.boot>2.2.2.RELEASE</spring.boot>
-        <cn.cc.base>0.0.1-SNAPSHOT</cn.cc.base>
+        <cn.cc.alibaba.2.6.base>0.0.1-SNAPSHOT</cn.cc.alibaba.2.6.base>
+        <cn.cc.apache.2.7.base>0.0.1-SNAPSHOT</cn.cc.apache.2.7.base>
+        <com.alibaba.fastjson>1.2.58</com.alibaba.fastjson>
 
         <!-- dubbo -->
         <com.alibaba.boot.dubbo.starter>0.2.0</com.alibaba.boot.dubbo.starter>
+        <org.apache.dubbo.spring.starter>2.7.8</org.apache.dubbo.spring.starter>
         <!-- dubbo -->
     </properties>
 
@@ -43,8 +49,13 @@
 
             <dependency>
                 <groupId>cn.cc</groupId>
-                <artifactId>dubbo-base</artifactId>
-                <version>${cn.cc.base}</version>
+                <artifactId>alibaba-2.6-base</artifactId>
+                <version>${cn.cc.alibaba.2.6.base}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cc</groupId>
+                <artifactId>apache-2.7-base</artifactId>
+                <version>${cn.cc.apache.2.7.base}</version>
             </dependency>
 
             <dependency>
@@ -68,10 +79,38 @@
             </dependency>
 
             <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${com.alibaba.fastjson}</version>
+            </dependency>
+
+            <!-- dubbo alibaba 2.6以及之前的版本 -->
+            <dependency>
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${com.alibaba.boot.dubbo.starter}</version>
             </dependency>
+
+            <!-- dubbo apache接管后 -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${org.apache.dubbo.spring.starter}</version>
+            </dependency>
+
+            <!-- 依赖放最上面管理  -->
+            <!-- 引入zookeeper的依赖 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>2.12.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>2.12.0</version>
+            </dependency>
+            <!-- zookeeper依赖 -->
 
         </dependencies>
     </dependencyManagement>

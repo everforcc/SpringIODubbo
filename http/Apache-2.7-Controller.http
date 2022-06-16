@@ -1,0 +1,15 @@
+### 字符串
+GET http://localhost:8081/say/123
+Accept: application/json
+
+### 对象
+POST http://localhost:8081/obj
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "stringList": [
+    "aaa","bbb"
+  ]
+}

@@ -10,10 +10,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>dubbo-provider</artifactId>
+    <artifactId>alibaba-2.6-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dubbo-provider</name>
-    <description>dubbo-provider</description>
+    <name>alibaba-2.6-consumer</name>
+    <description>alibaba-2.6-comsumer-消费端-controller层</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -25,13 +25,17 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!-- 公共base -->
         <dependency>
             <groupId>cn.cc</groupId>
-            <artifactId>dubbo-base</artifactId>
+            <artifactId>alibaba-2.6-base</artifactId>
         </dependency>
 
-        <!-- dubbo-starter -->
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>

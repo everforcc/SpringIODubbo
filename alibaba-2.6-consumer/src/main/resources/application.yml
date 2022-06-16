@@ -2,7 +2,7 @@ server:
   port: 8081
 dubbo:
   application:
-    name: dubbo-consumer
+    name: alibaba-2.6-consumer
   registry:
     address: zookeeper://127.0.0.1:2181
   monitor:
