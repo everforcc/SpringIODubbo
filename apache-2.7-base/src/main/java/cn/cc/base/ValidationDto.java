@@ -11,7 +11,7 @@
 
 package cn.cc.base;
 
-import cn.cc.service.IDubboService;
+import cn.cc.service.IValidationService;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.AllArgsConstructor;
@@ -30,17 +30,20 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RPCDto extends CommonFiled {
+public class ValidationDto extends CommonFiled {
 
     private long id;
 
-    @NotEmpty(message = "str不能为空", groups = {IDubboService.Str.class})
+    // 这个是不生效的,需要哪个要向下面那样指定,这个Str已经作为别人的载体了, 大概
+    @NotEmpty(message = "str不能为空", groups = {IValidationService.SaveWithUpdate.class})
     private String str;
 
-    @NotEmpty(message = "strUpdate 不能为空", groups = {IDubboService.Update.class})
+    // 校验Update字段
+    @NotEmpty(message = "strUpdate 不能为空", groups = {IValidationService.Update.class})
     private String strUpdate;
 
-    @NotEmpty(message = "strSave 不能为空", groups = {IDubboService.Save.class,IDubboService.SaveAppendUpdate.class})
+    // 第二个组也是没用的,因为已经是载体了,大概
+    @NotEmpty(message = "strSave 不能为空", groups = {IValidationService.Save.class, IValidationService.SaveAppendUpdate.class})
     private String strSave;
 
     private Date date;

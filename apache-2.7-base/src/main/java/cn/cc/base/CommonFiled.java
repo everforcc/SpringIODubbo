@@ -8,7 +8,6 @@
 package cn.cc.base;
 
 import cn.cc.service.CommonFiledService;
-import cn.cc.service.IDubboService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
