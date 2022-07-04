@@ -1,15 +1,53 @@
-### 字符串
-GET http://localhost:8081/say/123
+### 1. 字符串
+GET http://localhost:8081/dubbo-consumer/say/123
 Accept: application/json
 
-### 对象
+### 2. 对象
 POST http://localhost:8081/obj
 Accept: application/json
 Content-Type: application/json
 
 {
-  "id": 1,
-  "stringList": [
-    "aaa","bbb"
-  ]
+  "str": "str",
+  "createUserId": "createUserId"
 }
+
+### 21. 对象
+POST http://localhost:8081/saveWithUpdate
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strSave": "strSave",
+  "strUpdate": "strUpdate",
+  "createUserId": "createUserId"
+}
+### "strSave": "strSave",
+### "strCommon": "strCommon",
+### "strUpdate": "strUpdate",
+
+### 22. 对象
+POST http://localhost:8081/saveAppendUpdate
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strUpdate": "strUpdate",
+  "id": 1
+}
+
+### 23. 公共字段
+POST http://localhost:8081/strCommon
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strSave": "strSave",
+  "strUpdate": "strUpdate",
+  "strCommon": "strCommon",
+  "id": 1
+}
+
+### 404
+GET http://localhost:8081/dubbo-consumer/aaaa
+Accept: application/json

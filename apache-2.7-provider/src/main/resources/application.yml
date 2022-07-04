@@ -11,3 +11,5 @@ dubbo:
   protocol:
     name: dubbo # 几种调用方式吧，应该
     port: 20883
+  consumer:
+    validation: true

@@ -11,6 +11,7 @@
 
 package cn.cc.base;
 
+import cn.cc.service.IDubboService;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 import java.util.List;
 
@@ -29,11 +30,18 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RPCDto implements Serializable {
+public class RPCDto extends CommonFiled {
 
     private long id;
 
+    @NotEmpty(message = "str不能为空", groups = {IDubboService.Str.class})
     private String str;
+
+    @NotEmpty(message = "strUpdate 不能为空", groups = {IDubboService.Update.class})
+    private String strUpdate;
+
+    @NotEmpty(message = "strSave 不能为空", groups = {IDubboService.Save.class,IDubboService.SaveAppendUpdate.class})
+    private String strSave;
 
     private Date date;
 

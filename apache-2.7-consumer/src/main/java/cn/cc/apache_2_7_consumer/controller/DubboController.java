@@ -36,4 +36,22 @@ public class DubboController {
         return iDubboService.obj(rpcDto);
     }
 
+    @PostMapping("/saveWithUpdate")
+    public String saveWithUpdate(@RequestBody RPCDto rpcDto) {
+        log.info("consumer --- saveWithUpdate = [{}]", rpcDto);
+        return iDubboService.str(rpcDto);
+    }
+
+    @PostMapping("/saveAppendUpdate")
+    public String saveAppendUpdate(@RequestBody RPCDto rpcDto) {
+        log.info("consumer --- saveAppendUpdate = [{}]", rpcDto);
+        return iDubboService.saveAppendUpdate(rpcDto);
+    }
+
+    @PostMapping("/strCommon")
+    public String strCommon(@RequestBody RPCDto rpcDto) {
+        log.info("consumer --- saveAppendUpdate = [{}]", rpcDto);
+        return iDubboService.strCommon(rpcDto);
+    }
+
 }

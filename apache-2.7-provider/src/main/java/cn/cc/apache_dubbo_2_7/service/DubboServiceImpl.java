@@ -11,6 +11,7 @@
 
 package cn.cc.apache_dubbo_2_7.service;
 
+import cn.cc.base.CommonFiled;
 import cn.cc.base.RPCDto;
 import cn.cc.service.IDubboService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ import org.springframework.stereotype.Service;
 public class DubboServiceImpl implements IDubboService {
     @Override
     public String say(String word) {
-        log.info("provider --- word = [{}]", word);
+        log.info("provider --- say = [{}]", word);
         return "Hello " + word;
     }
 
@@ -35,4 +36,33 @@ public class DubboServiceImpl implements IDubboService {
         log.info("provider --- obj = [{}]", rpcDto);
         return rpcDto.toString();
     }
+
+    @Override
+    public String str(RPCDto rpcDto) {
+        log.info("provider --- obj_21 = [{}]", rpcDto);
+        return rpcDto.toString();
+    }
+
+    @Override
+    public String saveAppendUpdate(RPCDto rpcDto) {
+        log.info("provider --- saveAppendUpdate = [{}]", rpcDto);
+        return rpcDto.toString();
+    }
+
+//    @Override
+//    public void save(RPCDto rpcDto) {
+//
+//    }
+
+//    @Override
+//    public void update(RPCDto rpcDto) {
+//        log.info("provider --- obj_2_1 = [{}]", rpcDto);
+//    }
+
+    @Override
+    public String strCommon(RPCDto rpcDto) {
+        log.info("provider --- obj_2_2 = [{}]", rpcDto);
+        return rpcDto.toString();
+    }
+
 }
