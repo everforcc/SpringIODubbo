@@ -1,0 +1,52 @@
+### 1. a
+POST http://localhost:8081/touch
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strA": "strA"
+}
+
+### 2. ac
+POST http://localhost:8081/touch
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strA": "strA",
+  "strC": "strC"
+}
+
+### 3. abc
+POST http://localhost:8081/touch
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strA": "strA",
+  "strB": "strB",
+  "strC": "strC"
+}
+
+### 4. abcd
+POST http://localhost:8081/touch
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strA": "strA",
+  "strB": "strB",
+  "strC": "strC",
+  "strD": "strD"
+}
+
+### 5. bcd
+POST http://localhost:8081/touch
+Accept: application/json
+Content-Type: application/json
+
+{
+  "strB": "strB",
+  "strC": "strC",
+  "strD": "strD"
+}
