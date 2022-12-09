@@ -5,7 +5,7 @@ dubbo:
     id: apache-2.7-consumer
     name: apache-2.7-consumer
   registry:
-    address: zookeeper://127.0.0.1:2181 # 注册中心
+    address: zookeeper://43.143.232.133:2181 # 注册中心
   consumer:
     validation: true
     filter: -validation,customValidationFilter

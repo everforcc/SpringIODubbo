@@ -42,6 +42,10 @@
         <com.alibaba.boot.dubbo.starter>0.2.0</com.alibaba.boot.dubbo.starter>
         <org.apache.dubbo.spring.starter>2.7.8</org.apache.dubbo.spring.starter>
         <!-- dubbo -->
+
+        <!-- log4j -->
+        <codehaus.janino>3.1.2</codehaus.janino>
+
     </properties>
 
     <dependencyManagement>
@@ -111,6 +115,12 @@
                 <version>2.12.0</version>
             </dependency>
             <!-- zookeeper依赖 -->
+
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>${codehaus.janino}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

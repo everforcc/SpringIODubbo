@@ -1,5 +1,5 @@
 ### 1. 字符串
-GET http://localhost:8081/dubbo-consumer/say/123
+GET http://localhost:8081/say/123
 Accept: application/json
 
 ### 2. 对象

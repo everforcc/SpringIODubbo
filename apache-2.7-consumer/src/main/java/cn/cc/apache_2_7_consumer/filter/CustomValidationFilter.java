@@ -7,18 +7,19 @@
 
 package cn.cc.apache_2_7_consumer.filter;
 
+import cn.cc.constant.SysConstants;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.common.utils.CollectionUtils;
 import org.apache.dubbo.common.utils.ConfigUtils;
 import org.apache.dubbo.rpc.*;
 import org.apache.dubbo.validation.Validation;
 import org.apache.dubbo.validation.Validator;
-
+import org.slf4j.MDC;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.ValidationException;
-
+import java.util.Map;
 import java.util.Set;
 
 import static org.apache.dubbo.common.constants.CommonConstants.CONSUMER;
@@ -30,7 +31,9 @@ public class CustomValidationFilter implements Filter {
 
     private Validation validation;
 
-    public void setValidation(Validation validation) { this.validation = validation; }
+    public void setValidation(Validation validation) {
+        this.validation = validation;
+    }
 
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
         if (validation != null && !invocation.getMethodName().startsWith("$")
@@ -55,6 +58,11 @@ public class CustomValidationFilter implements Filter {
                 return AsyncRpcResult.newDefaultAsyncResult(t, invocation);
             }
         }
+
+        // 消费者传递过去，提供者取出来
+        String logId = MDC.get(SysConstants.TraceId);
+        Map<String, String> attachments = invocation.getAttachments();
+        attachments.put(SysConstants.TraceId, logId);
         return invoker.invoke(invocation);
     }
 }
