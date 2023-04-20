@@ -12,6 +12,16 @@ Content-Type: application/json
   "createUserId": "createUserId"
 }
 
+### 2. 对象
+POST http://localhost:8081/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "str": "str",
+  "createUserId": "createUserId"
+}
+
 ### 21. 对象 save和 update 校验
 POST http://localhost:8081/saveWithUpdate
 Accept: application/json
@@ -31,9 +41,16 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "strUpdate": "strUpdate",
+  "strUpdate": "",
   "id": 1
 }
+
+###
+
+### {
+###   "strUpdate": "strUpdate",
+###   "id": 1
+### }
 
 ### 23. 公共字段 对象 save和 update 和 common 校验
 POST http://localhost:8081/strCommon

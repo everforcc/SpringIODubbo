@@ -36,6 +36,12 @@ public class ValidationController {
         return iValidationService.obj(validationDto);
     }
 
+    @PostMapping("/update")
+    public String update(@RequestBody ValidationDto validationDto) {
+        log.info("consumer --- obj = [{}]", validationDto);
+        return iValidationService.update(validationDto);
+    }
+
     @PostMapping("/saveWithUpdate")
     public String saveWithUpdate(@RequestBody ValidationDto validationDto) {
         log.info("consumer --- saveWithUpdate = [{}]", validationDto);

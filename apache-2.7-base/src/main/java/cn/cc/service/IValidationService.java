@@ -44,8 +44,10 @@ public interface IValidationService {
      * 测试自有字段
      */
     @interface Update { }
-    default void update(ValidationDto validationDto) {
+    //@IValidationCheckService.Update
+    default String update(ValidationDto validationDto) {
         // 不做任何逻辑处理,仅分组校验使用
+        return validationDto.toString();
     }
 
     ;

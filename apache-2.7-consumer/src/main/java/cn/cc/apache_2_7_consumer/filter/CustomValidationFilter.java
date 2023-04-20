@@ -41,6 +41,8 @@ public class CustomValidationFilter implements Filter {
             try {
                 Validator validator = validation.getValidator(invoker.getUrl());
                 if (validator != null) {
+                    // 数据校验debug
+                    // 从内部类取值校验
                     validator.validate(invocation.getMethodName(), invocation.getParameterTypes(), invocation.getArguments());
                 }
             } catch (RpcException e) {

@@ -11,6 +11,7 @@
 
 package cn.cc.base;
 
+import cn.cc.service.IValidationCheckService;
 import cn.cc.service.IValidationService;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -39,7 +40,7 @@ public class ValidationDto extends CommonFiled {
     private String str;
 
     // 校验Update字段
-    @NotEmpty(message = "strUpdate 不能为空", groups = {IValidationService.Update.class})
+    @NotEmpty(message = "strUpdate 不能为空", groups = {IValidationCheckService.Update.class, IValidationService.Update.class})//
     private String strUpdate;
 
     // 第二个组也是没用的,因为已经是载体了,大概
