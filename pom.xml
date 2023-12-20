@@ -23,6 +23,7 @@
         <module>alibaba-2.6-consumer</module>
         <module>alibaba-2.6-provider</module>
         <module>apache-2.7-base</module>
+        <module>apache-2.7-common</module>
         <module>apache-2.7-consumer</module>
         <module>apache-2.7-provider</module>
     </modules>

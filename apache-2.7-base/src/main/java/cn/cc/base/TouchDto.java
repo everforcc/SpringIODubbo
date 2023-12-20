@@ -12,6 +12,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 远程调用的对象需要序列化
@@ -33,5 +34,9 @@ public class TouchDto implements Serializable {
 
     @NotEmpty(message = "strD 不能为空", groups = {ITouchService.Touch.class})
     private String strD;
+
+    private int i;
+
+    private Date date;
 
 }

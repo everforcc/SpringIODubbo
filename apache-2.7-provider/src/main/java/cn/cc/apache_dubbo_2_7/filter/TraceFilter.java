@@ -15,6 +15,10 @@ import org.slf4j.MDC;
 
 import static org.apache.dubbo.common.constants.CommonConstants.PROVIDER;
 
+/**
+ * 可以移动到common
+ * 如果有多个服务，都可以用
+ */
 @Slf4j
 @Activate(group = {PROVIDER}, value = "traceFilter", order = -9999)
 public class TraceFilter implements Filter {

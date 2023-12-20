@@ -50,3 +50,6 @@ Content-Type: application/json
   "strC": "strC",
   "strD": "strD"
 }
+
+### 测试 同步异步 执行代码
+GET http://localhost:8081/testAsync
