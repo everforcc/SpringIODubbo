@@ -1,5 +1,7 @@
 server:
   port: 8081
+  servlet:
+    context-path: /
 dubbo:
   application:
     id: apache-2.7-consumer
@@ -16,3 +18,10 @@ spring:
     add-mappings: false
   application:
     name: dubbo-consumer
+  servlet:
+    multipart:
+      # 最大支持文件大小
+      max-file-size: 4MB
+      # 最大支持请求大小
+      max-request-size: 4MB
+      enabled: true
