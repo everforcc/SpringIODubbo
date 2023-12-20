@@ -15,3 +15,22 @@ dubbo:
     validation: true
   provider:
     filter: traceFilter
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: cceverfor
+    password: 5664c.c.
+    url: jdbc:mysql://43.140.221.95:3308/oneforall?characterEncoding=UTF-8&&serverTimezone=GMT&&rewriteBatchedStatements=true # 编码和时区 &userSSL=false
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 12
+      connection-timeout: 60000
+      idle-timeout: 50000
+      max-lifetime: 55000
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 定义枚举类型
+    # default-enum-type-handler:

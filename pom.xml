@@ -26,6 +26,7 @@
         <module>apache-2.7-common</module>
         <module>apache-2.7-consumer</module>
         <module>apache-2.7-provider</module>
+        <module>apache-2.7-db</module>
     </modules>
 
     <!-- 打包方式 -->
@@ -46,6 +47,11 @@
 
         <!-- log4j -->
         <codehaus.janino>3.1.2</codehaus.janino>
+
+        <!-- 数据库 -->
+        <mybatis.plus>3.5.0</mybatis.plus>
+        <mysql.version>8.0.19</mysql.version>
+        <!-- 数据库 -->
 
     </properties>
 
@@ -122,6 +128,20 @@
                 <artifactId>janino</artifactId>
                 <version>${codehaus.janino}</version>
             </dependency>
+
+            <!-- 数据库 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <!--<scope>runtime</scope>-->
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus}</version>
+            </dependency>
+            <!-- 数据库 -->
 
         </dependencies>
     </dependencyManagement>
