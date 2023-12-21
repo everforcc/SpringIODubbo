@@ -1,5 +1,7 @@
 package cn.cc.base.novel;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +14,8 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NovelDto {
+
+    private int id;
 
     private String name;
 
@@ -31,11 +35,7 @@ public class NovelDto {
 
     @Override
     public String toString() {
-        return "NovelDto{" +
-                "name='" + name + '\'' +
-                ", sourceurl='" + sourceurl + '\'' +
-                ", sourcename='" + sourcename + '\'' +
-                '}';
+        return JSONObject.toJSONString(this, SerializerFeature.PrettyFormat);
     }
 
     @Override

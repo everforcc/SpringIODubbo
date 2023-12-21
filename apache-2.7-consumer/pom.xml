@@ -10,7 +10,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>apache_2_7_consumer</artifactId>
+    <artifactId>apache-2.7-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>apache-2.7-consumer</name>
     <description>dubbo消费端</description>

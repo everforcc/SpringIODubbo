@@ -29,9 +29,25 @@ public class NovelController {
     )
     INovelService iNovelService;
 
+    /**
+     * 测试数据库查询
+     *
+     * @param id 查询字段
+     */
     @GetMapping("/dbtest/{id}")
     public void selectByID(@PathVariable String id) {
         iNovelService.selectByID(id);
+    }
+
+    /**
+     * 测试分页查询
+     *
+     * @param page 页码
+     * @param size 每页数量
+     */
+    @GetMapping("/dbtest/list/{page}/{size}")
+    public void listPage(@PathVariable int page, @PathVariable int size) {
+        iNovelService.listNovelPage(page, size);
     }
 
 }

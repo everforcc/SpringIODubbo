@@ -1,2 +1,5 @@
 ### 测试数据库操作
 GET http://localhost:8081/everforcc/dbtest/4
+
+### 测试数据库 分页查询
+GET http://localhost:8081/dbtest/list/1/2
